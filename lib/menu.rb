@@ -12,4 +12,8 @@ class Menu
     end
     return menu.join("\n ")
   end
+
+  def show_price(item)
+    @items[item.to_sym]
+  end
 end

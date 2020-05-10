@@ -9,5 +9,11 @@ describe Menu do
       expect(subject.show_menu).to eq "Pizza: £10\n Chicken: £6\n Chips: £3"
     end
   end
+
+  describe "#show_price" do
+    it "shows the items price" do
+      expect(subject.show_price("Pizza")).to eq 10
+    end
+  end
   
 end
