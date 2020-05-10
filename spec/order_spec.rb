@@ -20,4 +20,14 @@ describe Order do
     end
   end
 
+  describe "#total_price" do
+    it "accumulates the price of the order and keeps a running total" do
+      allow(menu).to receive(:price).with(:Chicken).and_return(6)
+      allow(menu).to receive(:price).with(:Pizza).and_return(10)
+      order.select_item("Pizza", 1)
+      order.select_item("Chicken", 2)
+      expect(order.total).to eq "£22"
+    end
+  end
+
 end

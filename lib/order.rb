@@ -11,4 +11,11 @@ class Order
     raise "Item unavailable!" if !@menu.items.include?(item.to_sym)
     @basket[item.to_sym] = quantity
   end
+
+  def total
+    total = @basket.map do |item, quantity|
+      @menu.price(item) * quantity
+    end
+    "£#{total.reduce(:+)}"
+  end
 end
