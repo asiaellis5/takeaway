@@ -12,13 +12,11 @@ Dotenv.load('.env')
     @to = ENV['TO']
   end
 
-def send_message
-  message = @client.messages.create(
-    body: "Thank you! Your order was placed and will be delivered before #{Time.now + 3600}",
-    to: @to, 
-    from: @from )
-end
+  def send_message
+    message = @client.messages.create(
+      body: "Thank you! Your order was placed and will be delivered before #{(Time.now + (60 * 60)).strftime("%k:%M")}",
+      to: @to, 
+      from: @from )
+  end
 
 end
-
-TextConfirmation.new.send_message
