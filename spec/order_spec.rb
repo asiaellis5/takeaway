@@ -7,16 +7,12 @@ describe Order do
 
   describe "#select_item" do
     it "allows the user to select available items from the menu" do
-      allow(menu).to receive(:include?).with(:Pizza).and_return(:true)
-      allow(menu).to receive(:include?).with(:Chicken).and_return(:true)
       order.select_item("Pizza", 1)
       order.select_item("Chicken", 2)
       expect(order.basket).to eq(Pizza: 1, Chicken: 2)
     end
 
     it "allows the user to add multiple of the same item at different times" do
-      allow(menu).to receive(:include?).with(:Pizza).and_return(:true)
-      allow(menu).to receive(:include?).with(:Chicken).and_return(:true)
       order.select_item("Pizza", 1)
       order.select_item("Chicken", 2)
       order.select_item("Pizza", 5)
