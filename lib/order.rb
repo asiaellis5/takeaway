@@ -29,6 +29,7 @@ class Order
 
   def complete_order
     @text_confirmation.send_message(total)
+    @basket = {}
   end
 
   private
