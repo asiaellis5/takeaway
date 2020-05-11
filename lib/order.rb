@@ -9,7 +9,11 @@ class Order
 
   def select_item(item, quantity)
     raise "Item unavailable!" if !@menu.items.include?(item.to_sym)
+    if !@basket.has_key?(item.to_sym)
     @basket[item.to_sym] = quantity
+    else 
+      @basket[item.to_sym] += quantity
+    end
   end
 
   def total

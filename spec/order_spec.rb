@@ -14,6 +14,15 @@ describe Order do
       expect(order.basket).to eq(Pizza: 1, Chicken: 2)
     end
 
+    it "allows the user to add multiple of the same item at different times" do
+      allow(menu).to receive(:include?).with(:Pizza).and_return(:true)
+      allow(menu).to receive(:include?).with(:Chicken).and_return(:true)
+      order.select_item("Pizza", 1)
+      order.select_item("Chicken", 2)
+      order.select_item("Pizza", 5)
+      expect(order.basket).to eq(Pizza: 6, Chicken: 2)
+    end
+
     it "throws an error if the item isnt available" do
       allow(menu).to receive(:include?).with(:kebab).and_return(:false)
       expect{ order.select_item("kebab", 2) }.to raise_error "Item unavailable!"
