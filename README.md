@@ -30,7 +30,7 @@ I would like to receive a text such as "Thank you! Your order was placed and wil
 2.6.3 :003 > menu = Menu.new(items)
  => #<Menu:0x00007f9e4c9daa48 @items={:Pizza=>10, :Chicken=>6, :Chips=>3}>
 2.6.3 :004 > order = Order.new(menu)
- => #<Order:0x00007f9e4d241da8 @menu=#<Menu:0x00007f9e4c9daa48 @items={:Pizza=>10, :Chicken=>6, :Chips=>3}>, @basket={}, @text_confirmation=#<TextConfirmation:0x00007f9e4d241d08 @client=#<Twilio::REST::Client:0x00007f9e4d241b00 @username="AC7577be18ff4c44dfcec05d142970729f", @password="2420e7872bfc330b6d8931062521d0df", @region=nil, @account_sid="AC7577be18ff4c44dfcec05d142970729f", @auth_token="2420e7872bfc330b6d8931062521d0df", @auth=["AC7577be18ff4c44dfcec05d142970729f", "2420e7872bfc330b6d8931062521d0df"], @http_client=#<Twilio::HTTP::Client:0x00007f9e4d2418d0 @proxy_prot=nil, @ssl_ca_file=nil, @timeout=nil, @adapter=:net_http>, @accounts=nil, @api=nil, @authy=nil, @autopilot=nil, @chat=nil, @conversations=nil, @fax=nil, @flex_api=nil, @insights=nil, @ip_messaging=nil, @lookups=nil, @messaging=nil, @monitor=nil, @notify=nil, @numbers=nil, @preview=nil, @pricing=nil, @proxy=nil, @serverless=nil, @studio=nil, @sync=nil, @taskrouter=nil, @trunking=nil, @verify=nil, @video=nil, @voice=nil, @wireless=nil, @supersim=nil, @bulkexports=nil>, @from="+12133443820", @to="+447703328392">>
+ => #<Order:0x00007f9e4d241da8 @menu=#<Menu:0x00007f9e4c9daa48 @items={:Pizza=>10, :Chicken=>6, :Chips=>3}>, @basket={}>>
 2.6.3 :005 > order.select_item("Pizza", 2)
  => 2
 2.6.3 :006 > order.select_item("Chicken", 1)
