@@ -6,7 +6,7 @@ describe TextConfirmation do
 
   it "sends text with order details" do
     expect(subject).to receive(:send_message)
-    subject.send_message
+    subject.send_message('£10')
   end
 
   

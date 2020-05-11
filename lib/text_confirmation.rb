@@ -12,9 +12,9 @@ Dotenv.load('.env')
     @to = ENV['TO']
   end
 
-  def send_message
+  def send_message(total)
     message = @client.messages.create(
-      body: "Thank you! Your order was placed and will be delivered before #{(Time.now + (60 * 60)).strftime("%k:%M")}",
+      body: "Thank you! Your order was placed and will be delivered before #{(Time.now + (60 * 60)).strftime("%k:%M")}, total cost: #{total}",
       to: @to, 
       from: @from )
   end

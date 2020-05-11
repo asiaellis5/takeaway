@@ -13,7 +13,7 @@ class Menu
     return menu.join("\n ")
   end
 
-  def show_price(item)
+  def price(item)
     @items[item.to_sym]
   end
 end

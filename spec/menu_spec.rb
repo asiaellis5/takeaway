@@ -10,9 +10,9 @@ describe Menu do
     end
   end
 
-  describe "#show_price" do
+  describe "#price" do
     it "shows the items price" do
-      expect(subject.show_price("Pizza")).to eq 10
+      expect(subject.price("Pizza")).to eq 10
     end
   end
   

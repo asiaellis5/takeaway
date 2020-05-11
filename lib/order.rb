@@ -1,10 +1,14 @@
+require_relative 'menu'
+require_relative 'text_confirmation'
+
 class Order
 
   attr_reader :basket
 
-  def initialize(menu = Menu.new(items))
+  def initialize(menu = Menu.new(items), text= TextConfirmation.new)
     @menu = menu
     @basket = {}
+    @text_confirmation = text
   end
 
   def select_item(item, quantity)
@@ -21,6 +25,10 @@ class Order
       @menu.price(item) * quantity
     end
     "£#{total.reduce(:+)}"
+  end
+
+  def complete_order
+    @text_confirmation.send_message(total)
   end
 
   private
